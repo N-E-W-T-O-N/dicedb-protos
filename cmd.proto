@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package wire;
+
+option go_package = "./wire";
+
+message Command {
+    string cmd = 1;
+    repeated string args = 2;
+}
+
+message Response {
+    bool success = 1;
+    string msg = 2;
+    string err = 3;
+    map<string, string> data = 4;
+}
