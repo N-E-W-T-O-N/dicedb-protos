@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package wire;
-
+import "google/protobuf/struct.proto";
 option go_package = "./wire";
 
 message Command {
@@ -10,8 +10,13 @@ message Command {
 }
 
 message Response {
-    bool success = 1;
-    string msg = 2;
-    string err = 3;
-    map<string, string> data = 4;
+    string err = 1;
+    oneof value {
+        string v_nil = 2;
+        int64 v_int = 3;
+        string v_str = 4;
+        double v_float = 5;
+        bytes v_bytes = 6;
+    }
+    google.protobuf.Struct attrs = 7;
 }
