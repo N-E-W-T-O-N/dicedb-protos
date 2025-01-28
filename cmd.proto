@@ -12,7 +12,7 @@ message Command {
 message Response {
     string err = 1;
     oneof value {
-        string v_nil = 2;
+        bool v_nil = 2;
         int64 v_int = 3;
         string v_str = 4;
         double v_float = 5;
