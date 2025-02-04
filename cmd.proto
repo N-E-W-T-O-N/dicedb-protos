@@ -11,12 +11,14 @@ message Command {
 
 message Response {
     string err = 1;
+    google.protobuf.Struct attrs = 2;
     oneof value {
         bool v_nil = 2;
         int64 v_int = 3;
         string v_str = 4;
         double v_float = 5;
         bytes v_bytes = 6;
+        repeated string v_list_str = 7;
+        repeated int64 v_list_int = 8;
     }
-    google.protobuf.Struct attrs = 7;
 }
