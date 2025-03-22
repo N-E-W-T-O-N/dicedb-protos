@@ -20,4 +20,5 @@ message Response {
     }
     google.protobuf.Struct attrs = 7;
     repeated google.protobuf.Value v_list = 8;
+    map<string, string> v_ss_map = 9;
 }
