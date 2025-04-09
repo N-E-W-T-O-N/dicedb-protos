@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package wire;
+import "google/protobuf/struct.proto";
+option go_package = "./wire";
+
+message Result {
+    string err = 1;
+    google.protobuf.Struct attrs = 2;
+    oneof response {
+        HANDSHAKERes HANDSHAKERes = 10;
+        GETRes GETRes = 11;
+        SETRes SETRes = 12;
+        KEYSRes KEYSRes = 13;
+        ZRANGERes ZRANGERes = 21;
+    }
+}
+
+message Value {
+    oneof value {
+        bool nil = 1;
+        string str = 2;
+        int64 i64 = 3;
+        bytes bytes = 4;
+        double f64 = 5;
+    }
+}
+
+message HANDSHAKERes {
+}
+
+message GETRes {
+    Value value = 1;
+}
+
+message SETRes {
+}
+
+message KEYSRes {
+    repeated string keys = 1;
+}
+
+message ZElement {
+    int64 score = 1;
+    string member = 2;
+}
+
+message ZRANGERes {
+    repeated ZElement elements = 1;
+}
