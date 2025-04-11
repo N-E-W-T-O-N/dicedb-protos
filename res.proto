@@ -14,18 +14,33 @@ message Result {
     string message = 2;
     google.protobuf.Struct attrs = 3;
     oneof response {
+        ECHORes ECHORes = 9;
         HANDSHAKERes HANDSHAKERes = 10;
-        GETRes GETRes = 11;
-        SETRes SETRes = 12;
-        DELRes DELRes = 13;
-        KEYSRes KEYSRes = 14;
-        INCRRes INCRRes = 15;
-        DECRRes DECRRes = 16;
-        INCRBYRes INCRBYRes = 17;
-        DECRBYRes DECRBYRes = 18;
-        FLUSHDBRes FLUSHDBRes = 19;
-        ZRANGERes ZRANGERes = 20;
+        EXISTSRes EXISTSRes = 11;
+        GETRes GETRes = 12;
+        SETRes SETRes = 13;
+        DELRes DELRes = 14;
+        KEYSRes KEYSRes = 15;
+        INCRRes INCRRes = 16;
+        DECRRes DECRRes = 17;
+        INCRBYRes INCRBYRes = 18;
+        DECRBYRes DECRBYRes = 19;
+        FLUSHDBRes FLUSHDBRes = 20;
+        EXPIRERes EXPIRERes = 21;
+        ZRANGERes ZRANGERes = 22;
     }
+}
+
+message EXPIRERes {
+    bool is_changed = 1;
+}
+
+message ECHORes {
+    string message = 1;
+}
+
+message EXISTSRes {
+    int64 count = 1;
 }
 
 message HANDSHAKERes {
