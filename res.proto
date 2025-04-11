@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package wire;
+import "google/protobuf/struct.proto";
+option go_package = "./wire";
+
+enum Status {
+    OK = 0;
+    ERR = 1;
+}
+
+message Result {
+    Status status = 1;
+    string message = 2;
+    google.protobuf.Struct attrs = 3;
+    oneof response {
+        HANDSHAKERes HANDSHAKERes = 10;
+        GETRes GETRes = 11;
+        SETRes SETRes = 12;
+        DELRes DELRes = 13;
+        KEYSRes KEYSRes = 14;
+        INCRRes INCRRes = 15;
+        DECRRes DECRRes = 16;
+        INCRBYRes INCRBYRes = 17;
+        DECRBYRes DECRBYRes = 18;
+        FLUSHDBRes FLUSHDBRes = 19;
+        ZRANGERes ZRANGERes = 20;
+    }
+}
+
+message HANDSHAKERes {
+}
+
+message GETRes {
+    string value = 1;
+}
+
+message SETRes {
+}
+
+message DELRes {
+    int64 count = 1;
+}
+
+message FLUSHDBRes {
+}
+
+message KEYSRes {
+    repeated string keys = 1;
+}
+
+message INCRRes {
+    int64 value = 1;
+}
+
+message DECRRes {
+    int64 value = 1;
+}
+
+message INCRBYRes {
+    int64 value = 1;
+}
+
+message DECRBYRes {
+    int64 value = 1;
+}
+
+message ZElement {
+    int64 score = 1;
+    string member = 2;
+}
+
+message ZRANGERes {
+    repeated ZElement elements = 1;
+}
