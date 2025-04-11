@@ -27,11 +27,21 @@ message Result {
         DECRBYRes DECRBYRes = 19;
         FLUSHDBRes FLUSHDBRes = 20;
         EXPIRERes EXPIRERes = 21;
-        ZRANGERes ZRANGERes = 22;
+        EXPIREATRes EXPIREATRes = 22;
+        EXPIRETIMERes EXPIRETIMERes = 23;
+        ZRANGERes ZRANGERes = 24;
     }
 }
 
 message EXPIRERes {
+    bool is_changed = 1;
+}
+
+message EXPIREATRes {
+    bool is_changed = 1;
+}
+
+message EXPIRETIMERes {
     bool is_changed = 1;
 }
 
