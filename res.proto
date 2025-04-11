@@ -4,9 +4,15 @@ package wire;
 import "google/protobuf/struct.proto";
 option go_package = "./wire";
 
+enum Status {
+    OK = 0;
+    ERR = 1;
+}
+
 message Result {
-    string err = 1;
-    google.protobuf.Struct attrs = 2;
+    Status status = 1;
+    string message = 2;
+    google.protobuf.Struct attrs = 3;
     oneof response {
         HANDSHAKERes HANDSHAKERes = 10;
         GETRes GETRes = 11;
@@ -34,6 +40,7 @@ message GETRes {
 }
 
 message SETRes {
+    bool ok = 1;
 }
 
 message KEYSRes {
