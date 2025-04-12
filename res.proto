@@ -22,16 +22,23 @@ message Result {
         DELRes DELRes = 14;
         KEYSRes KEYSRes = 15;
         GETDELRes GETDELRes = 16;
-        INCRRes INCRRes = 17;
-        DECRRes DECRRes = 18;
-        INCRBYRes INCRBYRes = 19;
-        DECRBYRes DECRBYRes = 20;
-        FLUSHDBRes FLUSHDBRes = 21;
-        EXPIRERes EXPIRERes = 22;
-        EXPIREATRes EXPIREATRes = 23;
-        EXPIRETIMERes EXPIRETIMERes = 24;
-        ZRANGERes ZRANGERes = 25;
+        GETEXRes GETEXRes = 17;
+        GETSETRes GETSETRes = 18;
+        INCRRes INCRRes = 19;
+        DECRRes DECRRes = 20;
+        INCRBYRes INCRBYRes = 21;
+        DECRBYRes DECRBYRes = 22;
+        FLUSHDBRes FLUSHDBRes = 23;
+        EXPIRERes EXPIRERes = 24;
+        EXPIREATRes EXPIREATRes = 25;
+        EXPIRETIMERes EXPIRETIMERes = 26;
+        TTLRes TTLRes = 27;
+        ZRANGERes ZRANGERes = 28;
     }
+}
+
+message TTLRes {
+    int64 seconds = 1;
 }
 
 message EXPIRERes {
@@ -58,6 +65,14 @@ message HANDSHAKERes {
 }
 
 message GETRes {
+    string value = 1;
+}
+
+message GETEXRes {
+    string value = 1;
+}
+
+message GETSETRes {
     string value = 1;
 }
 
