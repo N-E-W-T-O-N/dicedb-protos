@@ -21,15 +21,16 @@ message Result {
         SETRes SETRes = 13;
         DELRes DELRes = 14;
         KEYSRes KEYSRes = 15;
-        INCRRes INCRRes = 16;
-        DECRRes DECRRes = 17;
-        INCRBYRes INCRBYRes = 18;
-        DECRBYRes DECRBYRes = 19;
-        FLUSHDBRes FLUSHDBRes = 20;
-        EXPIRERes EXPIRERes = 21;
-        EXPIREATRes EXPIREATRes = 22;
-        EXPIRETIMERes EXPIRETIMERes = 23;
-        ZRANGERes ZRANGERes = 24;
+        GETDELRes GETDELRes = 16;
+        INCRRes INCRRes = 17;
+        DECRRes DECRRes = 18;
+        INCRBYRes INCRBYRes = 19;
+        DECRBYRes DECRBYRes = 20;
+        FLUSHDBRes FLUSHDBRes = 21;
+        EXPIRERes EXPIRERes = 22;
+        EXPIREATRes EXPIREATRes = 23;
+        EXPIRETIMERes EXPIRETIMERes = 24;
+        ZRANGERes ZRANGERes = 25;
     }
 }
 
@@ -42,7 +43,7 @@ message EXPIREATRes {
 }
 
 message EXPIRETIMERes {
-    bool is_changed = 1;
+    int64 unix_sec = 1;
 }
 
 message ECHORes {
@@ -57,6 +58,10 @@ message HANDSHAKERes {
 }
 
 message GETRes {
+    string value = 1;
+}
+
+message GETDELRes {
     string value = 1;
 }
 
