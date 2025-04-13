@@ -14,6 +14,7 @@ message Result {
     string message = 2;
     google.protobuf.Struct attrs = 3;
     oneof response {
+        PINGRes PINGRes = 8;
         ECHORes ECHORes = 9;
         HANDSHAKERes HANDSHAKERes = 10;
         EXISTSRes EXISTSRes = 11;
@@ -38,6 +39,10 @@ message Result {
         HSETRes HSETRes = 30;
         HGETALLRes HGETALLRes = 31;
     }
+}
+
+message PINGRes {
+    string message = 1;
 }
 
 message HGETRes {
