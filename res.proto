@@ -35,13 +35,29 @@ message Result {
         EXPIREATRes EXPIREATRes = 25;
         EXPIRETIMERes EXPIRETIMERes = 26;
         TTLRes TTLRes = 27;
-        HGETRes HGETRes = 29;
-        HSETRes HSETRes = 30;
-        HGETALLRes HGETALLRes = 31;
-        ZADDRes ZADDRes = 32;
-        ZCOUNTRes ZCOUNTRes = 33;
-        ZRANGERes ZRANGERes = 34;
+        GETWATCHRes GETWATCHRes = 28;
+        UNWATCHRes UNWATCHRes = 29;
+        HGETRes HGETRes = 30;
+        HSETRes HSETRes = 31;
+        HGETALLRes HGETALLRes = 32;
+        HGETWATCHRes HGETWATCHRes = 33;
+        HGETALLWATCHRes HGETALLWATCHRes = 34;
+        ZADDRes ZADDRes = 35;
+        ZCOUNTRes ZCOUNTRes = 36;
+        ZRANGERes ZRANGERes = 37;
     }
+}
+
+message HGETWATCHRes {
+}
+
+message HGETALLWATCHRes {
+}
+
+message GETWATCHRes {
+}
+
+message UNWATCHRes {
 }
 
 message ZADDRes {
