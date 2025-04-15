@@ -35,11 +35,21 @@ message Result {
         EXPIREATRes EXPIREATRes = 25;
         EXPIRETIMERes EXPIRETIMERes = 26;
         TTLRes TTLRes = 27;
-        ZRANGERes ZRANGERes = 28;
         HGETRes HGETRes = 29;
         HSETRes HSETRes = 30;
         HGETALLRes HGETALLRes = 31;
+        ZADDRes ZADDRes = 32;
+        ZCOUNTRes ZCOUNTRes = 33;
+        ZRANGERes ZRANGERes = 34;
     }
+}
+
+message ZADDRes {
+    int64 count = 1;
+}
+
+message ZCOUNTRes {
+    int64 count = 1;
 }
 
 message TYPERes {
