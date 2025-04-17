@@ -52,7 +52,11 @@ message Result {
         ZRANGEWATCHRes ZRANGEWATCHRes = 47;
         ZCOUNTWATCHRes ZCOUNTWATCHRes = 48;
         ZCARDWATCHRes ZCARDWATCHRes = 49;
+        ZRANKWATCHRes ZRANKWATCHRes = 50;
     }
+}
+
+message ZRANKWATCHRes {
 }
 
 message HGETWATCHRes {
