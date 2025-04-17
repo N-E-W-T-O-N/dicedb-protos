@@ -49,6 +49,7 @@ message Result {
         ZREMRes ZREMRes = 39;
         ZPOPMINRes ZPOPMINRes = 40;
         ZRANKRes ZRANKRes = 41;
+        ZCARDRes ZCARDRes = 42;
     }
 }
 
@@ -194,4 +195,8 @@ message ZPOPMINRes {
 message ZRANKRes {
     int64 rank = 1;
     ZElement element = 2;
+}
+
+message ZCARDRes {
+    int64 count = 1;
 }
