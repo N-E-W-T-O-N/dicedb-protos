@@ -45,6 +45,9 @@ message Result {
         ZADDRes ZADDRes = 35;
         ZCOUNTRes ZCOUNTRes = 36;
         ZRANGERes ZRANGERes = 37;
+        ZPOPMAXRes ZPOPMAXRes = 38;
+        ZREMRes ZREMRes = 39;
+        ZPOPMINRes ZPOPMINRes = 40;
     }
 }
 
@@ -172,5 +175,17 @@ message ZElement {
 }
 
 message ZRANGERes {
+    repeated ZElement elements = 1;
+}
+
+message ZPOPMAXRes {
+    repeated ZElement elements = 1;
+}
+
+message ZREMRes {
+    int64 count = 1;
+}
+
+message ZPOPMINRes {
     repeated ZElement elements = 1;
 }
