@@ -48,6 +48,7 @@ message Result {
         ZPOPMAXRes ZPOPMAXRes = 38;
         ZREMRes ZREMRes = 39;
         ZPOPMINRes ZPOPMINRes = 40;
+        ZRANKRes ZRANKRes = 41;
     }
 }
 
@@ -188,4 +189,9 @@ message ZREMRes {
 
 message ZPOPMINRes {
     repeated ZElement elements = 1;
+}
+
+message ZRANKRes {
+    int64 rank = 1;
+    ZElement element = 2;
 }
