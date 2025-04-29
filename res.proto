@@ -180,6 +180,7 @@ message DECRBYRes {
 message ZElement {
     int64 score = 1;
     string member = 2;
+    int64 rank = 3;
 }
 
 message ZRANGERes {
@@ -199,7 +200,6 @@ message ZPOPMINRes {
 }
 
 message ZRANKRes {
-    int64 rank = 1;
     ZElement element = 2;
 }
 
