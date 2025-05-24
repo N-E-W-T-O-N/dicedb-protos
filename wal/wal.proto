@@ -4,6 +4,7 @@ package wal;
 option go_package = "./wal";
 
 enum ElementType {
+  ELEMENT_TYPE_NOOP = 0;
   ELEMENT_TYPE_COMMAND = 1;
 }
 
