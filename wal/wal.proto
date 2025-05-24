@@ -3,14 +3,13 @@ syntax = "proto3";
 package wal;
 option go_package = "./wal";
 
-enum WALEntryType {
-  WAL_ENTRY_TYPE_COMMAND = 0;
+enum ElementType {
+  ELEMENT_TYPE_COMMAND = 1;
 }
 
-message WALEntry {
+message Element {
   uint64 lsn = 1;
-  uint32 crc32 = 2;
-  int64 timestamp = 3;
-  WALEntryType entry_type = 4;
-  bytes payload = 5;
+  int64 timestamp = 2;
+  ElementType element_type = 3;
+  bytes payload = 4;
 }
