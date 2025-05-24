@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package wal;
+option go_package = "internal/wal";
+
+enum EntryType {
+  ENTRY_TYPE_COMMAND = 0;
+  ENTRY_TYPE_CHECKPOINT = 1;
+  ENTRY_TYPE_TRANSACTION = 2;
+  ENTRY_TYPE_REPLICATION = 3;
+}
+
+message WALEntry {
+  uint64 log_sequence_number = 1;
+  uint32 crc32 = 2;
+  int64 timestamp = 3;
+  EntryType entry_type = 4;
+  bytes entry_data = 5;
+}
