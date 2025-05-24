@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package wal;
-option go_package = "internal/wal";
+option go_package = "./wal";
 
 enum WALEntryType {
   WAL_ENTRY_TYPE_COMMAND = 0;
