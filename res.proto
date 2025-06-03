@@ -221,23 +221,24 @@ message ZCOUNTWATCHRes {
 message ZCARDWATCHRes {
 }
 
+message GEOCoords {
+    double longitude = 1;
+    double latitude = 2;
+}
+
+message GEOElement {
+    string member = 1;
+    GEOCoords coords = 2;
+    double distance = 3;
+    uint64 hash = 4;
+}
+
 message GEOADDRes {
     int64 count = 1;
 }
 
 message GEODISTRes {
     double distance = 1;
-}
-
-message GEOCoordinates {
-    double longitude = 1;
-    double latitude = 2;
-}
-message GEOElement {
-    string member = 1;
-    GEOCoordinates coordinates = 2;
-    double distance = 3;
-    uint64 hash = 4;
 }
 
 message GEOSEARCHRes {
@@ -249,5 +250,5 @@ message GEOHASHRes {
 }
 
 message GEOPOSRes {
-    repeated GEOCoordinates coordinates = 1;
+    repeated GEOCoords coords = 1;
 }
