@@ -53,6 +53,11 @@ message Result {
         ZCOUNTWATCHRes ZCOUNTWATCHRes = 48;
         ZCARDWATCHRes ZCARDWATCHRes = 49;
         ZRANKWATCHRes ZRANKWATCHRes = 50;
+        GEOADDRes GEOADDRes = 51;
+        GEODISTRes GEODISTRes = 52;
+        GEOSEARCHRes GEOSEARCHRes = 53;
+        GEOHASHRes GEOHASHRes = 54;
+        GEOPOSRes GEOPOSRes = 55;
     }
 }
 
@@ -214,4 +219,35 @@ message ZCOUNTWATCHRes {
 }
 
 message ZCARDWATCHRes {
+}
+
+message GEOADDRes {
+    int64 count = 1;
+}
+
+message GEODISTRes {
+    double distance = 1;
+}
+
+message GEOCoordinates {
+    double longitude = 1;
+    double latitude = 2;
+}
+message GEOElement {
+    string member = 1;
+    GEOCoordinates coordinates = 2;
+    double distance = 3;
+    uint64 hash = 4;
+}
+
+message GEOSEARCHRes {
+    repeated GEOElement elements = 1;
+}
+
+message GEOHASHRes {
+    repeated string hashes = 1;
+}
+
+message GEOPOSRes {
+    repeated GEOCoordinates coordinates = 1;
 }
