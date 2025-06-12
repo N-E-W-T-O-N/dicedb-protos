@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package wal;
 option go_package = "./wal";
+option csharp_namespace = "DiceDB";
 
 enum ElementType {
   ELEMENT_TYPE_NOOP = 0;

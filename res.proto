@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package wire;
 option go_package = "./wire";
+option csharp_namespace = "DiceDB";
 
 enum Status {
     OK = 0;
